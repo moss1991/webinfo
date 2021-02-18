@@ -55,6 +55,14 @@
                 path: '/list',
                 component: './TableList',
               },
+
+              {
+                name: 'list.demo-list',
+                icon: 'table',
+                path: '/demo',
+                component: './DemoList',
+              },
+
               {
                 component: './404',
               },
