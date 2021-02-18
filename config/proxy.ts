@@ -7,23 +7,23 @@
  */
 export default {
   dev: {
-    '/webinfo/':{
-      target: 'http://127.0.0.1:8081/webinfo',
-      changeOrigin: true,
-      pathRewrite: { '^': '' },
-    },
     '/api/': {
       target: 'https://preview.pro.ant.design',
       changeOrigin: true,
       pathRewrite: { '^': '' },
     },
-  },
-  test: {
-    '/webinfo/':{
+    '/webinfo/': {
       target: 'http://127.0.0.1:8081/webinfo',
       changeOrigin: true,
-      pathRewrite: { '^': '' },
+      pathRewrite: { '^/webinfo': '' },
     },
+  },
+  test: {
+    // '/webinfo/':{
+    //   target: 'http://127.0.0.1:8081/webinfo',
+    //   changeOrigin: true,
+    //   pathRewrite: { '^': '' },
+    // },
     '/api/': {
       target: 'https://preview.pro.ant.design',
       changeOrigin: true,
@@ -31,11 +31,11 @@ export default {
     },
   },
   pre: {
-    '/webinfo/':{
-      target: 'http://127.0.0.1:8081/webinfo',
-      changeOrigin: true,
-      pathRewrite: { '^': '' },
-    },
+    // '/webinfo/':{
+    //   target: 'http://127.0.0.1:8081/webinfo',
+    //   changeOrigin: true,
+    //   pathRewrite: { '^': '' },
+    // },
     '/api/': {
       target: 'http://localhost:8080/santa',
       changeOrigin: true,

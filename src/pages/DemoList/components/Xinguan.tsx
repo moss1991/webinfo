@@ -1,27 +1,12 @@
 import React from 'react';
 import { Modal , Table } from 'antd';
+import { XinguanListItem } from '../data'
 
-import request from '@/utils/request';
-
-async function queryData(){
-  // return request('/webinfo/all',{});
-  return request('http://127.0.0.1:8081/webinfo/all',{});
+export type XinguanProps = {
+  dataSource:Array<XinguanListItem>
 }
 
-
-export type XinguanProps = {}
-
 const XinguanList: React.FC<XinguanProps> = (props) => {
-  const dataSource = [
-    {
-      "name": "中国",
-      "value": "90498",
-      "susNum": "3",
-      "deathNum": "4735",
-      "cureNum": "85252",
-      "econNum": "511"
-    }
-  ];
 
   const columns = [
     {
@@ -56,14 +41,8 @@ const XinguanList: React.FC<XinguanProps> = (props) => {
     },
   ];
 
-  const getData =  async ()=>{
-    await queryData();
-  }
-
-  getData()
-
   return (
-    <Table dataSource={dataSource} columns={columns}></Table>
+    <Table dataSource={props.dataSource} columns={columns}></Table>
   );
 }
 
