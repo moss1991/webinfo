@@ -12,25 +12,13 @@ async function queryData(){
 }
 
 const DemoList: React.FC = () => {
-  let mdata:Array<XinguanListItem>
-  mdata = [
-    // {
-    //   "name": "中国",
-    //   "value": "90498",
-    //   "susNum": "3",
-    //   "deathNum": "4735",
-    //   "cureNum": "85252",
-    //   "econNum": "511"
-    // }
-  ];
+  const [item, setItem] = useState<XinguanListItem[]>([]);
 
   let getData = ()=>{
     queryData().then((res)=>{
-      console.log(111)
-      //调用了
+      console.log(res)
       if(res.code == 200){
-        //here 还是不行
-        mdata = res.data;
+        setItem( res.data )
       }
     });
   }
@@ -39,8 +27,7 @@ const DemoList: React.FC = () => {
 
   return (
     <div>
-      <DataList></DataList>
-      <XinguanList dataSource={ mdata }></XinguanList>
+      <XinguanList dataSource={ item }></XinguanList>
     </div>
   );
 }

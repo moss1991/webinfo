@@ -64,6 +64,13 @@
               },
 
               {
+                name: 'list.stock-list',
+                icon: 'table',
+                path: '/stock',
+                component: './StockList',
+              },
+
+              {
                 component: './404',
               },
             ],
