@@ -6,7 +6,7 @@ import StockCompany from './components/HsAndSz'
 import { StockListItem , TradeCalendarItem , NameChangeItem , StockCompanyItem } from './data'
 import { queryStockList, queryTradeCalendarData, queryNameChangeData, queryHsCompanyData } from './service'
 
-const DemoList: React.FC = () => {
+const StockInfo: React.FC = () => {
   const [ stock, setStock] = useState<StockListItem[]>([]);
   const [ trade_cal, setTradeCal] = useState<TradeCalendarItem[]>([]);
   const [ name_change , setNameChange ] = useState<NameChangeItem[]>([]);
@@ -46,7 +46,7 @@ const DemoList: React.FC = () => {
     })
   }
 
-  let getHsCompanyInfo = ()=>{
+  let getHsCompanyInfoData = ()=>{
     queryHsCompanyData({
       ts_type : 'sh'
     }).then((res)=>{
@@ -76,9 +76,9 @@ const DemoList: React.FC = () => {
       <h1>股票曾用名</h1>
       <NameChange dataSource={ name_change } ts_code={'600848.SH'} queryData={(params:any)=>{ getNameChangeData(params) }}></NameChange>
       <h1>上市公司信息</h1>
-      <StockCompany sh_data_source={ sh_company_info } sz_data_source={ sz_company_info } queryData={ ()=>{ getHsCompanyInfo() } }></StockCompany>
+      <StockCompany sh_data_source={ sh_company_info } sz_data_source={ sz_company_info } queryData={ ()=>{ getHsCompanyInfoData() } }></StockCompany>
     </div>
   );
 }
 
-export default DemoList;
+export default StockInfo;

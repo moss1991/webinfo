@@ -71,6 +71,13 @@
               },
 
               {
+                name: 'list.futures-list',
+                icon: 'table',
+                path: '/futures',
+                component: './FuturesList',
+              },
+
+              {
                 component: './404',
               },
             ],

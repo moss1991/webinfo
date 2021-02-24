@@ -22,6 +22,11 @@ export default {
       changeOrigin: true,
       pathRewrite: { '^/stockinfo': '' },
     },
+    '/futuresinfo/': {
+      target: 'http://127.0.0.1:8081/futuresinfo',
+      changeOrigin: true,
+      pathRewrite: { '^/futuresinfo': '' },
+    },
   },
   test: {
     // '/webinfo/':{

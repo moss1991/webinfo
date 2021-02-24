@@ -51,5 +51,6 @@ export default {
   'menu.editor.koni': '拓扑编辑器',
   //add from here
   'menu.list.demo-list': '新冠疫情',
-  'menu.list.stock-list': '股票信息'
+  'menu.list.stock-list': '股票信息',
+  'menu.list.futures-list': '期货信息'
 };
