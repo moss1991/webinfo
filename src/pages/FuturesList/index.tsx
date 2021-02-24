@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react';
 import FuturesBase from './components/FuturesBase';
 import FuturesDaily from './components/FuturesDaily';
 import FuturesHolding from './components/FuturesHolding';
+import FuturesWsr from './components/FuturesWsr';
 
 import type {
   futuresBaseItem ,
@@ -11,15 +12,34 @@ import type {
   futuresDailyParams,
   FuturesHoldingItem,
   FuturesHoldingParams,
+  FuturesWsrParams,
+  FuturesWsrItem,
+  FuturesSettleParams,
+  FuturesSettleItem,
+  FuturesIndexDailyParams,
+  FuturesIndexDailyItem,
+  FutureMappingParams,
+  FutureMappingItem,
+  FutureWeeklyDetailParams,
+  FutureWeeklyDetailItem
  } from './data';
 import {
-  queryFuturesBaseData , queryFuturesDaily  , queryFuturesHolding} from './service';
+  queryFuturesBaseData,
+  queryFuturesDaily,
+  queryFuturesHolding,
+  queryFuturesWsrData,
+  queryFuturesSettleData,
+  queryFuturesIndexData,
+  queryFuturesMappingData,
+  queryFuturesWeeklyDetailData
+} from './service';
 
 const FuturesInfo: React.FC = () => {
   const [ futures_base , set_futures_base ] = useState<futuresBaseItem[]>([])
   const [ futures_daily1 , set_futures_daily1 ] = useState<futuresDailyItem[]>([])
   const [ futures_daily2 , set_futures_daily2 ] = useState<futuresDailyItem[]>([])
   const [ futures_holding, set_futures_holding ] = useState<FuturesHoldingItem[]>([])
+  const [ futures_wsr, set_futures_wsr ] = useState<FuturesWsrItem[]>([])
 
   const getFuturesBaseData = (params?:futuresQueryParams)=>{
     queryFuturesBaseData(params).then((res)=>{
@@ -53,10 +73,20 @@ const FuturesInfo: React.FC = () => {
     })
   }
 
+  const getFuturesWsrData = (params:FuturesWsrParams)=>{
+    queryFuturesWsrData(params).then((res)=>{
+      if(res.code == 200){
+        let _data = JSON.parse(res.data)
+        set_futures_wsr(_data)
+      }
+    })
+  }
+
   return (
     <div>
       <h1>期货基本信息</h1>
       <FuturesBase futuresbase_datasoure={futures_base} queryData={(params:futuresQueryParams)=>{ getFuturesBaseData(params) }}></FuturesBase>
+      <h1>交易日历(重复)</h1>
       <h1>期货日线行情</h1>
       <FuturesDaily
         futures_daily_datasoure1={ futures_daily1 }
@@ -67,7 +97,13 @@ const FuturesInfo: React.FC = () => {
       <FuturesHolding
         holding_data_source={ futures_holding }
         queryData={(params:FuturesHoldingParams)=>{ getFuturesHoldingData(params)}}></FuturesHolding>
-      <h1>仓单日报(重复)</h1>
+
+      <h1>仓单日报</h1>
+      <FuturesWsr
+        wsr_data_source={ futures_wsr }
+        queryData={(params:FuturesWsrParams)=>{ getFuturesWsrData(params)}}
+      ></FuturesWsr>
+
       <h1>结算参数</h1>
       <h1>南华期货指数日线行情</h1>
       <h1>期货主力与连续合约</h1>

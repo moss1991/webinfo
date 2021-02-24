@@ -1,16 +1,16 @@
 import React , { useState } from 'react';
 import { Table , Form, Input, Select, Button, DatePicker } from 'antd';
 
-import { FuturesHoldingItem } from '../data'
+import { FuturesWsrItem } from '../data'
 
 const { Option } = Select;
 
-export type FutureHoldingProps = {
-  holding_data_source:Array<FuturesHoldingItem>;
+export type FutureWsrProps = {
+  wsr_data_source:Array<FuturesWsrItem>;
   queryData:any;
 }
 
-const Holding_columns = [
+const wsr_columns = [
   {
     title: '交易日期',
     dataIndex: 'trade_date',
@@ -18,51 +18,93 @@ const Holding_columns = [
     width: 150,
   },
   {
-    title: '合约代码或类型',
+    title: '产品代码',
     dataIndex: 'symbol',
     key: 'symbol',
     width: 150,
   },
   {
-    title: '期货公司会员简称',
-    dataIndex: 'broker',
-    key: 'broker',
+    title: '产品名称',
+    dataIndex: 'fut_name',
+    key: 'fut_name',
     width: 150,
   },
   {
-    title: '成交量',
+    title: '仓库名称',
+    dataIndex: 'warehouse',
+    key: 'warehouse',
+    width: 150,
+  },
+  {
+    title: '仓库编号',
+    dataIndex: 'wh_id',
+    key: 'wh_id',
+    width: 150,
+  },
+  {
+    title: '昨日仓单量',
+    dataIndex: 'pre_vol',
+    key: 'pre_vol',
+    width: 150,
+  },
+  {
+    title: '今日仓单量',
     dataIndex: 'vol',
     key: 'vol',
     width: 150,
   },
   {
-    title: '成交量变化',
+    title: '增减量',
     dataIndex: 'vol_chg',
     key: 'vol_chg',
     width: 150,
   },
   {
-    title: '持买仓量',
-    dataIndex: 'long_hld',
-    key: 'long_hld',
+    title: '地区',
+    dataIndex: 'area',
+    key: 'area',
     width: 150,
   },
   {
-    title: '持买仓量变化',
-    dataIndex: 'long_chg',
-    key: 'long_chg',
+    title: '年度',
+    dataIndex: 'year',
+    key: 'year',
     width: 150,
   },
   {
-    title: '持卖仓量',
-    dataIndex: 'short_hld',
-    key: 'short_hld',
+    title: '等级',
+    dataIndex: 'grade',
+    key: 'grade',
     width: 150,
   },
   {
-    title: '持卖仓量变化',
-    dataIndex: 'short_chg',
-    key: 'short_chg',
+    title: '品牌',
+    dataIndex: 'brand',
+    key: 'brand',
+    width: 150,
+  },
+  {
+    title: '产地',
+    dataIndex: 'place',
+    key: 'place',
+    width: 150,
+  },
+  {
+    title: '升贴水',
+    dataIndex: 'pd',
+    key: 'pd',
+    width: 150,
+  },
+  {
+    title: '是否折算仓单',
+    dataIndex: 'is_ct',
+    key: 'is_ct',
+    width: 150,
+  },
+  {
+    title: '单位',
+    dataIndex: 'unit',
+    key: 'unit',
     width: 150,
   },
   {
@@ -71,9 +113,9 @@ const Holding_columns = [
     key: 'exchange',
     width: 150,
   },
-];
+]
 
-const FuturesHolding : React.FC<FutureHoldingProps> = (props) =>{
+const FuturesWsr : React.FC<FutureWsrProps> = (props) =>{
   const [ symbol , set_symbol ] = useState<string>('')
   const [ exchange , set_exchange ] = useState<string>('DCE')
 
@@ -126,9 +168,10 @@ const FuturesHolding : React.FC<FutureHoldingProps> = (props) =>{
     props.queryData(_params)
   }
 
+
   return (
     <div>
-      <Form name="customized_form_controls" layout="inline">
+      <Form name="wsr_form_controls" layout="inline">
         <Form.Item rules={[ { validator: check_required },]}>
           <Input placeholder="请输入合约标识" onChange={ handle_symbol_change }/>
 
@@ -160,9 +203,9 @@ const FuturesHolding : React.FC<FutureHoldingProps> = (props) =>{
           <Button type="primary" htmlType="submit" onClick={ handle_query_click }>查询</Button>
         </Form.Item>
       </Form>
-      <Table dataSource={ props.holding_data_source } columns={ Holding_columns } pagination={{ pageSize: 50 }} scroll={{  y: 480 }} ></Table>
+      <Table dataSource={ props.wsr_data_source } columns={ wsr_columns } pagination={{ pageSize: 50 }} scroll={{  y: 480 }} ></Table>
     </div>
   )
 }
 
-export default FuturesHolding;
+export default FuturesWsr
