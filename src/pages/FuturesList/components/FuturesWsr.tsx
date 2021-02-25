@@ -174,7 +174,6 @@ const FuturesWsr : React.FC<FutureWsrProps> = (props) =>{
       <Form name="wsr_form_controls" layout="inline">
         <Form.Item rules={[ { validator: check_required },]}>
           <Input placeholder="请输入合约标识" onChange={ handle_symbol_change }/>
-
         </Form.Item>
 
         <Form.Item rules={[ { validator: check_required },]}>
