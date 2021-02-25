@@ -29,7 +29,7 @@ const mapping_columns = [
 ]
 
 const FuturesMapping : React.FC<FuturesMappingProps> = (props) =>{
-  const [ ts_code , set_ts_code ] = useState<string>('')
+  const [ ts_code , set_ts_code ] = useState<string>('TF.CFX')
   const [ trade_date , set_trade_date ] = useState<string>('')
   const [ start_date , set_start_date ] = useState<string>('')
   const [ end_date , set_end_date ] = useState<string>('')
@@ -71,7 +71,7 @@ const FuturesMapping : React.FC<FuturesMappingProps> = (props) =>{
     <div>
       <Form name="wsr_form_controls" layout="inline">
         <Form.Item>
-          <Input placeholder="请输入合约号" onChange={ handle_ts_code }/>
+          <Input defaultValue={ ts_code } placeholder="请输入合约号" onChange={ handle_ts_code }/>
         </Form.Item>
 
         <Form.Item>

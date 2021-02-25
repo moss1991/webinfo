@@ -116,12 +116,12 @@ const wsr_columns = [
 ]
 
 const FuturesWsr : React.FC<FutureWsrProps> = (props) =>{
-  const [ symbol , set_symbol ] = useState<string>('')
+  const [ symbol , set_symbol ] = useState<string>('c')
   const [ exchange , set_exchange ] = useState<string>('DCE')
 
   const [ trade_date , set_trade_date ] = useState<string>('')
   const [ start_date , set_start_date ] = useState<string>('')
-  const [ end_data , set_end_data ] = useState<string>('')
+  const [ end_date , set_end_date ] = useState<string>('')
 
   const handle_exchange_change = (value:string)=>{
     set_exchange(value)
@@ -155,7 +155,7 @@ const FuturesWsr : React.FC<FutureWsrProps> = (props) =>{
 
   const handle_end_date =  (value:any)=>{
     if(value){
-      set_end_data(value.format('YYYYMMDD'))
+      set_end_date(value.format('YYYYMMDD'))
     }
   }
 
@@ -163,7 +163,9 @@ const FuturesWsr : React.FC<FutureWsrProps> = (props) =>{
     let _params = {
       trade_date: trade_date,
       symbol : symbol,
-
+      exchange:exchange,
+      start_date: start_date,
+      end_date:end_date
     }
     props.queryData(_params)
   }
@@ -173,7 +175,7 @@ const FuturesWsr : React.FC<FutureWsrProps> = (props) =>{
     <div>
       <Form name="wsr_form_controls" layout="inline">
         <Form.Item rules={[ { validator: check_required },]}>
-          <Input placeholder="请输入合约标识" onChange={ handle_symbol_change }/>
+          <Input defaultValue={'c'} placeholder="请输入合约标识" onChange={ handle_symbol_change }/>
         </Form.Item>
 
         <Form.Item rules={[ { validator: check_required },]}>

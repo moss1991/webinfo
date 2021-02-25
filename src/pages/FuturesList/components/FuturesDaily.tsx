@@ -137,9 +137,9 @@ const fut_daily_columns = [
 
 const FuturesDaily : React.FC<FuturesDailyProps> = (props) =>{
   const [ nowpage , set_nowpage ] = useState<number>(1)
-  const [ start_date , set_start_date ] = useState<string>('')
-  const [ end_data , set_end_data ] = useState<string>('')
-  const [ ts_code , set_ts_code ] = useState<string>('')
+  const [ start_date , set_start_date ] = useState<string>('20180101')
+  const [ end_data , set_end_data ] = useState<string>('20201231')
+  const [ ts_code , set_ts_code ] = useState<string>('JD1907.DCE')
   const [ exchange , set_exchange ] = useState<string>('DCE')
 
   const handle_panel_change = (value:any)=>{
@@ -195,7 +195,7 @@ const FuturesDaily : React.FC<FuturesDailyProps> = (props) =>{
         <TabPane tab="按照合约代码查询" key="1">
           <Form name='futuresbase_form_controls' layout='inline'>
             <Form.Item>
-              <Input placeholder="请输入合约号" onChange={ handle_ts_code }/>
+              <Input defaultValue={ ts_code } placeholder="请输入合约号" onChange={ handle_ts_code }/>
             </Form.Item>
             <Form.Item>
               开始时间<DatePicker onChange={ handle_start_date } />

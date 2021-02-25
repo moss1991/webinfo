@@ -86,12 +86,11 @@ const settle_columns = [
 ]
 
 const FuturesSettle : React.FC<FutureSettleProps> = (props) =>{
-
   const [ ts_code , set_ts_code ] = useState<string>('')
-  const [ trade_date , set_trade_date ] = useState<string>('')
+  const [ trade_date , set_trade_date ] = useState<string>('20181114')
   const [ start_date , set_start_date ] = useState<string>('')
   const [ end_date , set_end_date ] = useState<string>('')
-  const [ exchange , set_exchange ] = useState<string>('DCE')
+  const [ exchange , set_exchange ] = useState<string>('SHFE')
 
   const handle_ts_code = (e:any)=>{
     if(e.target.value){
@@ -151,7 +150,7 @@ const FuturesSettle : React.FC<FutureSettleProps> = (props) =>{
         </Form.Item>
 
         <Form.Item>
-          <Select defaultValue="DCE" style={{ width: 240 }} onChange={ handle_exchange_change }>
+          <Select defaultValue="SHFE" style={{ width: 240 }} onChange={ handle_exchange_change }>
             <Option value="CFFEX">CFFEX-中金所</Option>
             <Option value="DCE">DCE-大商所</Option>
             <Option value="CZCE">CZCE-郑商所</Option>

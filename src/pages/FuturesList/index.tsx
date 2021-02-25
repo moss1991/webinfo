@@ -7,6 +7,7 @@ import FuturesWsr from './components/FuturesWsr';
 import FuturesSettle from './components/FuturesSettle'
 import FuturesIndexDaily from './components/FuturesIndexDaily'
 import FuturesMapping from './components/FuturesMapping'
+import FuturesWeeklyDetail from './components/FuturesWeeklyDetail'
 
 import type {
   futuresBaseItem ,
@@ -46,6 +47,7 @@ const FuturesInfo: React.FC = () => {
   const [ futures_settle , set_futures_settle ] = useState<FuturesSettleItem[]>([])
   const [ futures_index_daily , set_futures_index_daily ] = useState<FuturesIndexDailyItem[]>([])
   const [ futures_mapping , set_futures_mapping ] = useState<FutureMappingItem[]>([])
+  const [ futures_weeklydetail , set_futures_weeklydetail ] = useState<FutureWeeklyDetailItem[]>([])
 
   const getFuturesBaseData = (params?:futuresQueryParams)=>{
     queryFuturesBaseData(params).then((res)=>{
@@ -118,6 +120,15 @@ const FuturesInfo: React.FC = () => {
     })
   }
 
+  const getFuturesWeeklyDetailData = (params:FutureWeeklyDetailParams)=>{
+    queryFuturesWeeklyDetailData(params).then((res)=>{
+      if(res.code == 200){
+        let _data = JSON.parse(res.data)
+        set_futures_weeklydetail(_data)
+      }
+    })
+  }
+
   return (
     <div>
       <h1>期货基本信息</h1>
@@ -155,7 +166,12 @@ const FuturesInfo: React.FC = () => {
       <FuturesMapping
         mapping_data_source={ futures_mapping }
         queryData={(params:FutureMappingParams)=>{ getFuturesMappingData(params)}}></FuturesMapping>
+
       <h1>期货主要品种交易周报</h1>
+      <FuturesWeeklyDetail
+        weeklydetail_data_source={ futures_weeklydetail }
+        queryData={(params:FutureWeeklyDetailParams)=>{ getFuturesWeeklyDetailData(params)}}
+      ></FuturesWeeklyDetail>
     </div>
   );
 }

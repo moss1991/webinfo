@@ -80,10 +80,10 @@ const index_daily_columns = [
 ]
 
 const FuturesIndexDaily: React.FC<FuturesIndexDailyProps> = (props) =>{
-  const [ ts_code , set_ts_code ] = useState<string>('')
+  const [ ts_code , set_ts_code ] = useState<string>('CU.NH')
   const [ trade_date , set_trade_date ] = useState<string>('')
-  const [ start_date , set_start_date ] = useState<string>('')
-  const [ end_date , set_end_date ] = useState<string>('')
+  const [ start_date , set_start_date ] = useState<string>('20180101')
+  const [ end_date , set_end_date ] = useState<string>('20181201')
 
   const handle_ts_code = (e:any)=>{
     if(e.target.value){
@@ -123,7 +123,7 @@ const FuturesIndexDaily: React.FC<FuturesIndexDailyProps> = (props) =>{
     <div>
       <Form name="wsr_form_controls" layout="inline">
         <Form.Item>
-          <Input placeholder="请输入合约号" onChange={ handle_ts_code }/>
+          <Input defaultValue={ ts_code  } placeholder="请输入合约号" onChange={ handle_ts_code }/>
         </Form.Item>
 
         <Form.Item>
@@ -133,6 +133,7 @@ const FuturesIndexDaily: React.FC<FuturesIndexDailyProps> = (props) =>{
         <Form.Item>
           开始时间<DatePicker onChange={ handle_start_date } />
         </Form.Item>
+
         <Form.Item>
           结束时间<DatePicker onChange={ handle_end_date } />
         </Form.Item>
@@ -140,6 +141,7 @@ const FuturesIndexDaily: React.FC<FuturesIndexDailyProps> = (props) =>{
         <Form.Item>
           <Button type="primary" htmlType="submit" onClick={ handle_query_click }>查询</Button>
         </Form.Item>
+
       </Form>
       <Table dataSource={ props.index_daily_data_source } columns={ index_daily_columns } pagination={{ pageSize: 50 }} scroll={{  y: 480 }} ></Table>
     </div>

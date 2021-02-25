@@ -74,7 +74,7 @@ const Holding_columns = [
 ];
 
 const FuturesHolding : React.FC<FutureHoldingProps> = (props) =>{
-  const [ symbol , set_symbol ] = useState<string>('')
+  const [ symbol , set_symbol ] = useState<string>('c')
   const [ exchange , set_exchange ] = useState<string>('DCE')
 
   const [ trade_date , set_trade_date ] = useState<string>('')
@@ -130,8 +130,7 @@ const FuturesHolding : React.FC<FutureHoldingProps> = (props) =>{
     <div>
       <Form name="customized_form_controls" layout="inline">
         <Form.Item rules={[ { validator: check_required },]}>
-          <Input placeholder="请输入合约标识" onChange={ handle_symbol_change }/>
-
+          <Input defaultValue={ symbol } placeholder="请输入合约标识" onChange={ handle_symbol_change }/>
         </Form.Item>
 
         <Form.Item rules={[ { validator: check_required },]}>
