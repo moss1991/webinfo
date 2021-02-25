@@ -1,4 +1,7 @@
-﻿export default [
+﻿// import FuturesList from '../src/pages/FuturesList'
+// import StockList from '../src/pages/StockList'
+
+export default [
   {
     path: '/',
     component: '../layouts/BlankLayout',
@@ -49,32 +52,99 @@
                   },
                 ],
               },
-              {
-                name: 'list.table-list',
-                icon: 'table',
-                path: '/list',
-                component: './TableList',
-              },
+              // {
+              //   name: 'list.table-list',
+              //   icon: 'table',
+              //   path: '/list',
+              //   component: './TableList',
+              // },
 
-              {
-                name: 'list.demo-list',
-                icon: 'table',
-                path: '/demo',
-                component: './DemoList',
-              },
+              // {
+              //   name: 'list.demo-list',
+              //   icon: 'table',
+              //   path: '/demo',
+              //   component: './DemoList',
+              // },
 
               {
                 name: 'list.stock-list',
                 icon: 'table',
                 path: '/stock',
                 component: './StockList',
+                // component:StockList
               },
+
+              // {
+              //   name: 'list.futures-list',
+              //   icon: 'table',
+              //   path: '/futures',
+              //   component: './FuturesList',
+              // },
 
               {
                 name: 'list.futures-list',
                 icon: 'table',
                 path: '/futures',
-                component: './FuturesList',
+                // component: './FuturesList',
+                routes: [
+                  {
+                    path: '/futures/baseinfo',
+                    name: 'baseinfo',
+                    icon: 'smile',
+                    component: './FuturesBaseInfo',
+                  },
+                  {
+                    path: '/futures/daily',
+                    name: 'daily',
+                    icon: 'smile',
+                    component: './FuturesDaily',
+                  },
+                  {
+                    path: '/futures/holding',
+                    name: 'holding',
+                    icon: 'smile',
+                    component: './FuturesHolding',
+                  },
+                  {
+                    path: '/futures/wsr',
+                    name: 'wsr',
+                    icon: 'smile',
+                    component: './FuturesWsr',
+                  },
+
+                  {
+                    path: '/futures/settle',
+                    name: 'settle',
+                    icon: 'smile',
+                    component: './FuturesSettle',
+                  },
+                  {
+                    path: '/futures/indexdaily',
+                    name: 'indexdaily',
+                    icon: 'smile',
+                    component: './FuturesIndexDaily',
+                  },
+                  {
+                    path: '/futures/mapping',
+                    name: 'mapping',
+                    icon: 'smile',
+                    component: './FuturesMapping',
+                  },
+                  {
+                    path: '/futures/weeklydetail',
+                    name: 'weeklydetail',
+                    icon: 'smile',
+                    component: './FuturesWeeklyDetail',
+                  }
+                ],
+                // children : [
+                //   {
+                //     name: 'all',
+                //     icon: 'table',
+                //     path: '/all',
+                //     component: './FuturesList/TestSubPage',
+                //   },
+                // ]
               },
 
               {

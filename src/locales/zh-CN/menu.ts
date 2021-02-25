@@ -52,5 +52,13 @@ export default {
   //add from here
   'menu.list.demo-list': '新冠疫情',
   'menu.list.stock-list': '股票信息',
-  'menu.list.futures-list': '期货信息'
+  'menu.list.futures-list': '期货信息',
+  'menu.list.futures-list.baseinfo' : '期货合约信息表',
+  'menu.list.futures-list.daily' : '期货日线行情',
+  'menu.list.futures-list.holding' : '每日成交持仓排名',
+  'menu.list.futures-list.wsr' : '仓单日报',
+  'menu.list.futures-list.settle' : '每日结算参数',
+  'menu.list.futures-list.indexdaily' : '南华期货指数日线行情',
+  'menu.list.futures-list.mapping' : '期货主力与连续合约',
+  'menu.list.futures-list.weeklydetail' : '期货主要品种交易周报',
 };
