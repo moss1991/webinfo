@@ -61,4 +61,16 @@ export default {
   'menu.list.futures-list.indexdaily' : '南华期货指数日线行情',
   'menu.list.futures-list.mapping' : '期货主力与连续合约',
   'menu.list.futures-list.weeklydetail' : '期货主要品种交易周报',
+
+  'menu.list.economy' : '宏观经济',
+  'menu.list.economy.cninfo' : '国内宏观',
+  'menu.list.economy.cninfo.rate' : '利率数据',
+  'menu.list.economy.cninfo.rate.rate1' : '利率数据1',
+  'menu.list.economy.cninfo.rate.rate2' : '利率数据2',
+  'menu.list.economy.cninfo.gdp' : '国内生产总值',
+  'menu.list.economy.cninfo.keypoint' : '价格指数',
+  'menu.list.economy.cninfo.keypoint.cpi' : 'cpi',
+  'menu.list.economy.cninfo.keypoint.ppi' : 'ppi',
+  'menu.list.economy.cninfo.money' : '货币供应量',
+  'menu.list.economy.others' : '国际宏观',
 };

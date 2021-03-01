@@ -66,13 +66,13 @@ export default [
               //   component: './DemoList',
               // },
 
-              {
-                name: 'list.stock-list',
-                icon: 'table',
-                path: '/stock',
-                component: './StockList',
-                // component:StockList
-              },
+              // {
+              //   name: 'list.stock-list',
+              //   icon: 'table',
+              //   path: '/stock',
+              //   component: './StockList',
+              //   // component:StockList
+              // },
 
               // {
               //   name: 'list.futures-list',
@@ -137,14 +137,102 @@ export default [
                     component: './FuturesWeeklyDetail',
                   }
                 ],
-                // children : [
-                //   {
-                //     name: 'all',
-                //     icon: 'table',
-                //     path: '/all',
-                //     component: './FuturesList/TestSubPage',
-                //   },
-                // ]
+              },
+              // {
+              //   name: '外汇',
+              //   icon: 'table',
+              //   path: '/fx',
+              //   // component: './FuturesList',
+              //   routes: [
+              //     {
+              //       path: '/fx/base',
+              //       name : "外汇基础信息",
+              //       icon: 'smile',
+              //     },
+              //     {
+              //       path: '/fx/daily',
+              //       name : "外汇日线行情",
+              //       icon: 'smile',
+              //     },
+              //   ]
+              // },
+              {
+                name: 'list.economy',
+                icon: 'table',
+                path: '/economy',
+                // component: './FuturesList',
+                routes: [
+                  {
+                    path: '/economy/china',
+                    name: 'cninfo',
+                    icon: 'smile',
+                    routes: [
+                      // economy - rate
+                      {
+                        path: '/economy/china/rate',
+                        name: 'rate',
+                        icon: 'smile',
+                        routes:[
+                          {
+                            path: '/economy/china/rate/rate1',
+                            name: 'rate1',
+                            icon: 'smile',
+                            // component: './FuturesWeeklyDetail',
+                          },
+                          {
+                            path: '/economy/china/rate/rate2',
+                            name: 'rate2',
+                            icon: 'smile',
+                            // component: './FuturesWeeklyDetail',
+                          }
+                        ]
+                      },
+                      // economy - gdp
+                      {
+                        path: '/economy/china/gdp',
+                        name: 'gdp',
+                        icon: 'smile',
+                        component: './CnGdp',
+                      },
+
+                      // economy - keypoint cpi ppi
+                      {
+                        path: '/economy/china/keypoint',
+                        name: 'keypoint',
+                        icon: 'smile',
+                        routes:[
+                          {
+                            path: '/economy/china/keypoint/cpi',
+                            name: 'cpi',
+                            icon: 'smile',
+                            component: './CnCpi',
+                          },
+                          {
+                            path: '/economy/china/keypoint/ppi',
+                            name: 'ppi',
+                            icon: 'smile',
+                            component: './CnPpi',
+                          },
+                        ]
+                      },
+                      // economy - money
+                      {
+                        path: '/economy/china/money',
+                        name: 'money',
+                        icon: 'smile',
+                        component: './CnMoney',
+                        // route:[]
+                      },
+                    ]
+                    // component: './FuturesWeeklyDetail',
+                  },
+                  {
+                    path: '/economy/others',
+                    name: 'others',
+                    icon: 'smile',
+                    // component: './FuturesWeeklyDetail',
+                  }
+                ]
               },
 
               {

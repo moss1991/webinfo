@@ -27,6 +27,11 @@ export default {
       changeOrigin: true,
       pathRewrite: { '^/futuresinfo': '' },
     },
+    '/cninfo/': {
+      target: 'http://127.0.0.1:8081/cninfo',
+      changeOrigin: true,
+      pathRewrite: { '^/cninfo': '' },
+    },
   },
   test: {
     // '/webinfo/':{
