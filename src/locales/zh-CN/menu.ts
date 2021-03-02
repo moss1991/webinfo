@@ -73,4 +73,7 @@ export default {
   'menu.list.economy.cninfo.keypoint.ppi' : 'ppi',
   'menu.list.economy.cninfo.money' : '货币供应量',
   'menu.list.economy.others' : '国际宏观',
+
+  'menu.list.economy.others.tbr' : '美国短期利率',
+  'menu.list.economy.others.tltr' : '美国长期利率',
 };

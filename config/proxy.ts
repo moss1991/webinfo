@@ -32,6 +32,11 @@ export default {
       changeOrigin: true,
       pathRewrite: { '^/cninfo': '' },
     },
+    '/econ/': {
+      target: 'http://127.0.0.1:8081/econ',
+      changeOrigin: true,
+      pathRewrite: { '^/econ': '' },
+    },
   },
   test: {
     // '/webinfo/':{

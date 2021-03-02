@@ -230,6 +230,20 @@ export default [
                     path: '/economy/others',
                     name: 'others',
                     icon: 'smile',
+                    routes:[
+                      {
+                        path: '/economy/others/tbr',
+                        name: 'tbr',
+                        icon: 'smile',
+                        component: './EconUsTbr',
+                      },
+                      {
+                        path: '/economy/others/tltr',
+                        name: 'tltr',
+                        icon: 'smile',
+                        component: './EconUsTltr',
+                      }
+                    ]
                     // component: './FuturesWeeklyDetail',
                   }
                 ]
