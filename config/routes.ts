@@ -192,7 +192,7 @@ export default [
                         path: '/economy/china/gdp',
                         name: 'gdp',
                         icon: 'smile',
-                        component: './CnGdp',
+                        component: './EconGdp',
                       },
 
                       // economy - keypoint cpi ppi
@@ -205,13 +205,13 @@ export default [
                             path: '/economy/china/keypoint/cpi',
                             name: 'cpi',
                             icon: 'smile',
-                            component: './CnCpi',
+                            component: './EconCpi',
                           },
                           {
                             path: '/economy/china/keypoint/ppi',
                             name: 'ppi',
                             icon: 'smile',
-                            component: './CnPpi',
+                            component: './EconPpi',
                           },
                         ]
                       },
@@ -220,7 +220,7 @@ export default [
                         path: '/economy/china/money',
                         name: 'money',
                         icon: 'smile',
-                        component: './CnMoney',
+                        component: './EconMoney',
                         // route:[]
                       },
                     ]

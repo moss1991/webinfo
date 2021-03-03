@@ -11,49 +11,49 @@ import type {
 } from './data.d';
 
 export async function queryFuturesBaseData(params?:futuresQueryParams){
-  return request('/futuresinfo/base',{
+  return request('/futures/base',{
     params
   });
 }
 
 export async function queryFuturesDaily(params?:futuresDailyParams){
-  return request('/futuresinfo/daily',{
+  return request('/futures/daily',{
     params
   });
 }
 
 export async function queryFuturesHolding(params?:FuturesHoldingParams){
-  return request('/futuresinfo/holding',{
+  return request('/futures/holding',{
     params
   });
 }
 
 export async function queryFuturesWsrData(params?:FuturesWsrParams){
-  return request('/futuresinfo/wsr',{
+  return request('/futures/wsr',{
     params
   });
 }
 
 export async function queryFuturesSettleData(params?:FuturesSettleParams){
-  return request('/futuresinfo/settle',{
+  return request('/futures/settle',{
     params
   })
 }
 
 export async function queryFuturesIndexData(params?:FuturesIndexDailyParams){
-  return request('/futuresinfo/index',{
+  return request('/futures/index',{
     params
   })
 }
 
 export async function queryFuturesMappingData(params?:FutureMappingParams){
-  return request('/futuresinfo/mapping',{
+  return request('/futures/mapping',{
     params
   })
 }
 
 export async function queryFuturesWeeklyDetailData(params?:FutureWeeklyDetailParams){
-  return request('/futuresinfo/wdetail',{
+  return request('/futures/wdetail',{
     params
   })
 }

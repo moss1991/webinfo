@@ -40,3 +40,5 @@ npm run lint:fix
 
 * +国内宏观相关所有代码 20210301 rc done
 * +国外宏观经济 20210302 rc done
+* +amcharts集成 20210303 rc done
+* +amcharts折线图 20210303 rc done

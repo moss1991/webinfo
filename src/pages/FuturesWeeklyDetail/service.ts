@@ -4,7 +4,7 @@ import type {
 } from './data.d';
 
 export async function queryFuturesWeeklyDetailData(params?:FutureWeeklyDetailParams){
-  return request('/futuresinfo/wdetail',{
+  return request('/futures/wdetail',{
     params
   })
 }

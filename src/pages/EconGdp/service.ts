@@ -1,10 +1,10 @@
 import request from '@/utils/request';
 import type {
   GdpQueryParams,
-} from './data.d';
+} from './data';
 
 export async function queryGdpList(params?:GdpQueryParams){
-  return request('/cninfo/gdp',{
+  return request('/econ/gdp',{
     params
   });
 }

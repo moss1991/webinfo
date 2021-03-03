@@ -4,7 +4,7 @@ import type {
 } from './data.d';
 
 export async function queryFuturesBaseData(params?:futuresQueryParams){
-  return request('/futuresinfo/base',{
+  return request('/futures/base',{
     params
   });
 }

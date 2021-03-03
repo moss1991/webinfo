@@ -4,7 +4,7 @@ import type {
 } from './data.d';
 
 export async function queryFuturesDaily(params?:futuresDailyParams){
-  return request('/futuresinfo/daily',{
+  return request('/futures/daily',{
     params
   });
 }

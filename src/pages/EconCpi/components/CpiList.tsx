@@ -1,6 +1,7 @@
-import React , { useState } from 'react';
+import React , { useState , useLayoutEffect} from 'react';
 import { Table , Form, Input, Select, Button } from 'antd';
 import { CpiItem } from '../data'
+import CpiChart from './CpiChart'
 
 const { Option } = Select;
 
@@ -119,7 +120,7 @@ const CpiList : React.FC<CpiListProps> = (props) =>{
       set_end_m(e.target.value)
     }
   }
-  const handle_query = ()=>{
+  const handle_query_click = ()=>{
     let _params = {
       m : m,
       start_m : start_m,
@@ -127,6 +128,11 @@ const CpiList : React.FC<CpiListProps> = (props) =>{
     }
     props.queryData(_params)
   }
+
+  useLayoutEffect(() => {
+    handle_query_click()
+    return () => {};
+  },[])
 
   return (
     <div>
@@ -145,10 +151,11 @@ const CpiList : React.FC<CpiListProps> = (props) =>{
         </Form.Item>
 
         <Form.Item>
-          <Button type="primary" htmlType="submit" onClick={ handle_query }>查询</Button>
+          <Button type="primary" htmlType="submit" onClick={ handle_query_click }>查询</Button>
         </Form.Item>
       </Form>
       <Table dataSource={ props.cpilist_datasource } columns={ cpilist_columns } pagination={{ pageSize: 50 }} scroll={{  x:1500, y: 480 }} ></Table>
+      <CpiChart dataSource={ props.cpilist_datasource }></CpiChart>
     </div>
   )
 }

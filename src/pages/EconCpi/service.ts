@@ -1,10 +1,10 @@
 import request from '@/utils/request';
 import type {
   CpiQueryParams,
-} from './data.d';
+} from './data';
 
 export async function queryCpiList(params?:CpiQueryParams){
-  return request('/cninfo/cpi',{
+  return request('/econ/cpi',{
     params
   });
 }

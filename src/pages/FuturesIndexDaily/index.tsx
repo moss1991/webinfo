@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 
 import FuturesIndexDaily from './components/FuturesIndexDaily'
 
+
 import type {
   FuturesIndexDailyParams,
   FuturesIndexDailyItem,

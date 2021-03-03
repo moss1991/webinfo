@@ -1,7 +1,8 @@
-import React , { useState } from 'react';
+import React , { useState , useLayoutEffect } from 'react';
 import { Tabs , Table , Form, Input, Select, Button, DatePicker, Space } from 'antd';
 
 import type { futuresDailyItem , futuresDailyParams } from '../data';
+import DailyChart from './DailyChart'
 
 const { Option } = Select;
 const { TabPane } = Tabs;
@@ -169,7 +170,7 @@ const FuturesDaily : React.FC<FuturesDailyProps> = (props) =>{
   }
 
   const handle_query_click = ()=>{
-    console.log('call query')
+    // console.log('call query')
     if(nowpage === 1){
       props.queryData({
         ts_code : ts_code,
@@ -187,6 +188,11 @@ const FuturesDaily : React.FC<FuturesDailyProps> = (props) =>{
       })
     }
   }
+
+  useLayoutEffect(() => {
+    handle_query_click()
+    return () => {};
+  },[])
 
   return (
     <div>
@@ -208,6 +214,7 @@ const FuturesDaily : React.FC<FuturesDailyProps> = (props) =>{
             </Form.Item>
           </Form>
           <Table dataSource={ props.futures_daily_datasoure1 } columns={ fut_daily_columns} pagination={{ pageSize: 50 }} scroll={{  y: 480 }} ></Table>
+          <DailyChart ts_code={ ts_code } dataSource={ props.futures_daily_datasoure1 } ></DailyChart>
         </TabPane>
         <TabPane tab="按照交易所代码查询" key="2">
 

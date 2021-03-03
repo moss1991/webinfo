@@ -1,10 +1,10 @@
 import request from '@/utils/request';
 import type {
   PpiQueryParams,
-} from './data.d';
+} from './data';
 
 export async function queryPpiList(params?:PpiQueryParams){
-  return request('/cninfo/ppi',{
+  return request('/econ/ppi',{
     params
   });
 }

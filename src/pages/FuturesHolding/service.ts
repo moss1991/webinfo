@@ -4,7 +4,7 @@ import type {
 } from './data.d';
 
 export async function queryFuturesHolding(params?:FuturesHoldingParams){
-  return request('/futuresinfo/holding',{
+  return request('/futures/holding',{
     params
   });
 }

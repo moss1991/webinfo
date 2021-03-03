@@ -1,7 +1,9 @@
-import React , { useState } from 'react';
+import React , { useState , useLayoutEffect } from 'react';
 import { Table , Form, Input, Select, Button, DatePicker } from 'antd';
 
 import { FuturesIndexDailyItem } from '../data'
+
+import FuturesIndexDailyChart from './FuturesIndexDailyChart'
 
 const { Option } = Select;
 
@@ -119,6 +121,11 @@ const FuturesIndexDaily: React.FC<FuturesIndexDailyProps> = (props) =>{
     props.queryData(_params)
   }
 
+  useLayoutEffect(() => {
+    handle_query_click()
+    return () => {};
+  },[])
+
   return (
     <div>
       <h1>南华期货指数日线行情</h1>
@@ -127,16 +134,16 @@ const FuturesIndexDaily: React.FC<FuturesIndexDailyProps> = (props) =>{
           <Input defaultValue={ ts_code  } placeholder="请输入合约号" onChange={ handle_ts_code }/>
         </Form.Item>
 
-        <Form.Item>
-          交易日期<DatePicker onChange={ handle_trade_date } />
+        <Form.Item label="交易日期">
+          <DatePicker onChange={ handle_trade_date } />
         </Form.Item>
 
-        <Form.Item>
-          开始时间<DatePicker onChange={ handle_start_date } />
+        <Form.Item label="开始时间">
+          <DatePicker onChange={ handle_start_date } />
         </Form.Item>
 
-        <Form.Item>
-          结束时间<DatePicker onChange={ handle_end_date } />
+        <Form.Item label="结束时间">
+          <DatePicker onChange={ handle_end_date } />
         </Form.Item>
 
         <Form.Item>
@@ -145,6 +152,7 @@ const FuturesIndexDaily: React.FC<FuturesIndexDailyProps> = (props) =>{
 
       </Form>
       <Table dataSource={ props.index_daily_data_source } columns={ index_daily_columns } pagination={{ pageSize: 50 }} scroll={{  y: 480 }} ></Table>
+      <FuturesIndexDailyChart ts_code={ ts_code } dataSource={ props.index_daily_data_source } ></FuturesIndexDailyChart>
     </div>
   )
 }

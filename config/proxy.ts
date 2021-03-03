@@ -12,26 +12,26 @@ export default {
       changeOrigin: true,
       pathRewrite: { '^': '' },
     },
-    '/webinfo/': {
+    '/web/': {
       target: 'http://127.0.0.1:8081/webinfo',
       changeOrigin: true,
       pathRewrite: { '^/webinfo': '' },
     },
-    '/stockinfo/': {
-      target: 'http://127.0.0.1:8081/stockinfo',
+    '/stock/': {
+      target: 'http://127.0.0.1:8081/stock',
       changeOrigin: true,
-      pathRewrite: { '^/stockinfo': '' },
+      pathRewrite: { '^/stock': '' },
     },
-    '/futuresinfo/': {
-      target: 'http://127.0.0.1:8081/futuresinfo',
+    '/futures/': {
+      target: 'http://127.0.0.1:8081/futures',
       changeOrigin: true,
-      pathRewrite: { '^/futuresinfo': '' },
+      pathRewrite: { '^/futures': '' },
     },
-    '/cninfo/': {
-      target: 'http://127.0.0.1:8081/cninfo',
-      changeOrigin: true,
-      pathRewrite: { '^/cninfo': '' },
-    },
+    // '/cninfo/': {
+    //   target: 'http://127.0.0.1:8081/cninfo',
+    //   changeOrigin: true,
+    //   pathRewrite: { '^/cninfo': '' },
+    // },
     '/econ/': {
       target: 'http://127.0.0.1:8081/econ',
       changeOrigin: true,

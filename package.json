@@ -45,6 +45,9 @@
     "not ie <= 10"
   ],
   "dependencies": {
+    "@amcharts/amcharts4": "^4.10.15",
+    "@amcharts/amcharts4-fonts": "^4.0.1",
+    "@amcharts/amcharts4-geodata": "^4.1.19",
     "@ant-design/icons": "^4.0.0",
     "@ant-design/pro-descriptions": "^1.2.0",
     "@ant-design/pro-form": "^1.3.0",
