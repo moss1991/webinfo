@@ -1,6 +1,7 @@
 import React , { useState } from 'react';
 import { Table , Form, Input, Select, Button } from 'antd';
 import { MoneyItem } from '../data'
+import MoneyChart from './MoneyChart'
 
 export type MoneyListProps = {
   moneylist_datasource : Array<MoneyItem>;
@@ -124,6 +125,7 @@ const MoneyList : React.FC<MoneyListProps> = (props) =>{
         </Form.Item>
       </Form>
       <Table dataSource={ props.moneylist_datasource } columns={ moneylist_columns } pagination={{ pageSize: 50 }} scroll={{  x:1500, y: 480 }} ></Table>
+      <MoneyChart dataSource={ props.moneylist_datasource } ></MoneyChart>
     </div>
   )
 }

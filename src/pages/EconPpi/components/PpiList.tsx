@@ -259,7 +259,7 @@ const PpiList : React.FC<PpiListProps> = (props) =>{
 
   return (
     <div>
-      <h1>工业生产者出厂价格指数(cpi)</h1>
+      <h1>工业生产者出厂价格指数(ppi)</h1>
       <Form name='futuresbase_form_controls' layout='inline'>
         <Form.Item>
           <Input defaultValue={ m } placeholder="月份" alt="YYYYMM，支持多个月份同时输入，逗号分隔" onChange={ handle_m }/>

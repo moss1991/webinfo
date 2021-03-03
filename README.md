@@ -42,3 +42,5 @@ npm run lint:fix
 * +国外宏观经济 20210302 rc done
 * +amcharts集成 20210303 rc done
 * +amcharts折线图 20210303 rc done
+* +批量增加线段 20210303 rc done
+* +批量增加线段 -- 增加图表描述 20210303 rc plan
