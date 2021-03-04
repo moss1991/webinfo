@@ -65,8 +65,8 @@ export default {
   'menu.list.economy' : '宏观经济',
   'menu.list.economy.cninfo' : '国内宏观',
   'menu.list.economy.cninfo.rate' : '利率数据',
-  'menu.list.economy.cninfo.rate.rate1' : '利率数据1',
-  'menu.list.economy.cninfo.rate.rate2' : '利率数据2',
+  'menu.list.economy.cninfo.rate.rate1' : '中间价',
+  // 'menu.list.economy.cninfo.rate.rate2' : '利率数据2',
   'menu.list.economy.cninfo.gdp' : '国内生产总值',
   'menu.list.economy.cninfo.keypoint' : '价格指数',
   'menu.list.economy.cninfo.keypoint.cpi' : 'cpi',
@@ -76,4 +76,5 @@ export default {
 
   'menu.list.economy.others.tbr' : '美国短期利率',
   'menu.list.economy.others.tltr' : '美国长期利率',
+  'menu.list.haiguan' : '2020海关进出口数据',
 };

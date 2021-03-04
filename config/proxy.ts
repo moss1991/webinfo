@@ -13,9 +13,9 @@ export default {
       pathRewrite: { '^': '' },
     },
     '/web/': {
-      target: 'http://127.0.0.1:8081/webinfo',
+      target: 'http://127.0.0.1:8081/web',
       changeOrigin: true,
-      pathRewrite: { '^/webinfo': '' },
+      pathRewrite: { '^/web': '' },
     },
     '/stock/': {
       target: 'http://127.0.0.1:8081/stock',
@@ -36,6 +36,11 @@ export default {
       target: 'http://127.0.0.1:8081/econ',
       changeOrigin: true,
       pathRewrite: { '^/econ': '' },
+    },
+    '/haiguan/': {
+      target: 'http://127.0.0.1:8081/haiguan',
+      changeOrigin: true,
+      pathRewrite: { '^/haiguan': '' },
     },
   },
   test: {

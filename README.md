@@ -44,3 +44,4 @@ npm run lint:fix
 * +amcharts折线图 20210303 rc done
 * +批量增加线段 20210303 rc done
 * +批量增加线段 -- 增加图表描述 20210303 rc plan
+* +增加汇率页面 20210304 rc plan

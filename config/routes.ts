@@ -177,14 +177,14 @@ export default [
                             path: '/economy/china/rate/rate1',
                             name: 'rate1',
                             icon: 'smile',
-                            // component: './FuturesWeeklyDetail',
+                            component: './EconRate',
                           },
-                          {
-                            path: '/economy/china/rate/rate2',
-                            name: 'rate2',
-                            icon: 'smile',
-                            // component: './FuturesWeeklyDetail',
-                          }
+                          // {
+                          //   path: '/economy/china/rate/rate2',
+                          //   name: 'rate2',
+                          //   icon: 'smile',
+                          //   // component: './FuturesWeeklyDetail',
+                          // }
                         ]
                       },
                       // economy - gdp
@@ -247,6 +247,13 @@ export default [
                     // component: './FuturesWeeklyDetail',
                   }
                 ]
+              },
+
+              {
+                name: 'list.haiguan',
+                icon: 'table',
+                path: '/haiguan',
+                component: './HaiguanList',
               },
 
               {
