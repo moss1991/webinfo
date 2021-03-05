@@ -8,7 +8,7 @@ import { queryHaiguanLimitList , queryHaiguanSum} from './service';
 
 const HaiguanListPage:React.FC = ()=>{
   const [ haiguan , set_haiguan ] = useState<HaiguanItem[]>([])
-  const [ sum , set_sum ] = useState(0)
+  const [ sum , set_sum ] = useState(143424)
   const [ page , set_page ] = useState(1)
 
   const getHaiguanData = ()=>{
@@ -21,10 +21,11 @@ const HaiguanListPage:React.FC = ()=>{
   }
 
   const getHaiguanSum = ()=>{
-    queryHaiguanSum().then((res)=>{
-      set_sum(res.data)
-      getHaiguanData()
-    })
+    // queryHaiguanSum().then((res)=>{
+    //   set_sum(res.data)
+    //   getHaiguanData()
+    // })
+    getHaiguanData()
   }
 
   const handle_page_change = (page:any)=>{
