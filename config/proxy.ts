@@ -54,6 +54,43 @@ export default {
       changeOrigin: true,
       pathRewrite: { '^': '' },
     },
+
+    '/api/': {
+      target: 'https://preview.pro.ant.design',
+      changeOrigin: true,
+      pathRewrite: { '^': '' },
+    },
+    '/web/': {
+      target: 'http://127.0.0.1:8081/web',
+      changeOrigin: true,
+      pathRewrite: { '^/web': '' },
+    },
+    '/stock/': {
+      target: 'http://127.0.0.1:8081/stock',
+      changeOrigin: true,
+      pathRewrite: { '^/stock': '' },
+    },
+    '/futures/': {
+      target: 'http://127.0.0.1:8081/futures',
+      changeOrigin: true,
+      pathRewrite: { '^/futures': '' },
+    },
+    // '/cninfo/': {
+    //   target: 'http://127.0.0.1:8081/cninfo',
+    //   changeOrigin: true,
+    //   pathRewrite: { '^/cninfo': '' },
+    // },
+    '/econ/': {
+      target: 'http://127.0.0.1:8081/econ',
+      changeOrigin: true,
+      pathRewrite: { '^/econ': '' },
+    },
+    '/haiguan/': {
+      target: 'http://127.0.0.1:8081/haiguan',
+      changeOrigin: true,
+      pathRewrite: { '^/haiguan': '' },
+    },
+
   },
   pre: {
     // '/webinfo/':{
@@ -62,9 +99,39 @@ export default {
     //   pathRewrite: { '^': '' },
     // },
     '/api/': {
-      target: 'http://localhost:8080/santa',
+      target: 'https://preview.pro.ant.design',
       changeOrigin: true,
       pathRewrite: { '^': '' },
+    },
+    '/web/': {
+      target: 'http://127.0.0.1:8081/web',
+      changeOrigin: true,
+      pathRewrite: { '^/web': '' },
+    },
+    '/stock/': {
+      target: 'http://127.0.0.1:8081/stock',
+      changeOrigin: true,
+      pathRewrite: { '^/stock': '' },
+    },
+    '/futures/': {
+      target: 'http://127.0.0.1:8081/futures',
+      changeOrigin: true,
+      pathRewrite: { '^/futures': '' },
+    },
+    // '/cninfo/': {
+    //   target: 'http://127.0.0.1:8081/cninfo',
+    //   changeOrigin: true,
+    //   pathRewrite: { '^/cninfo': '' },
+    // },
+    '/econ/': {
+      target: 'http://127.0.0.1:8081/econ',
+      changeOrigin: true,
+      pathRewrite: { '^/econ': '' },
+    },
+    '/haiguan/': {
+      target: 'http://127.0.0.1:8081/haiguan',
+      changeOrigin: true,
+      pathRewrite: { '^/haiguan': '' },
     },
   },
 };

@@ -6,20 +6,21 @@ export default [
     path: '/',
     component: '../layouts/BlankLayout',
     routes: [
-      {
-        path: '/user',
-        component: '../layouts/UserLayout',
-        routes: [
-          {
-            name: 'login',
-            path: '/user/login',
-            component: './User/login',
-          },
-        ],
-      },
+      // {
+      //   path: '/user',
+      //   component: '../layouts/UserLayout',
+      //   routes: [
+      //     {
+      //       name: 'login',
+      //       path: '/user/login',
+      //       component: './User/login',
+      //     },
+      //   ],
+      // },
       {
         path: '/',
-        component: '../layouts/SecurityLayout',
+        component: '../layouts/BlankLayout',
+        // component: '../layouts/SecurityLayout',
         routes: [
           {
             path: '/',
