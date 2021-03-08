@@ -4,7 +4,7 @@ import type {
 } from './data.d';
 
 export async function queryFuturesMappingData(params?:FutureMappingParams){
-  return request('/futures/mapping',{
+  return request('/api/futures/mapping',{
     params
   })
 }

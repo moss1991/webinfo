@@ -4,7 +4,7 @@ import type {
 } from './data';
 
 export async function queryCpiList(params?:CpiQueryParams){
-  return request('/econ/cpi',{
+  return request('/api/econ/cpi',{
     params
   });
 }

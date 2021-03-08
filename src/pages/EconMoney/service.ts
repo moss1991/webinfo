@@ -4,7 +4,7 @@ import type {
 } from './data';
 
 export async function queryMoneyList(params?:MoneyQueryParams){
-  return request('/econ/money',{
+  return request('/api/econ/money',{
     params
   });
 }

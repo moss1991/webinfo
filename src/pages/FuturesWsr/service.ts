@@ -4,7 +4,7 @@ import type {
 } from './data.d';
 
 export async function queryFuturesWsrData(params?:FuturesWsrParams){
-  return request('/futures/wsr',{
+  return request('/api/futures/wsr',{
     params
   });
 }

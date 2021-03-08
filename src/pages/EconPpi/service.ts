@@ -4,7 +4,7 @@ import type {
 } from './data';
 
 export async function queryPpiList(params?:PpiQueryParams){
-  return request('/econ/ppi',{
+  return request('/api/econ/ppi',{
     params
   });
 }

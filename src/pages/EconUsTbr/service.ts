@@ -4,7 +4,7 @@ import type {
 } from './data.d';
 
 export async function queryUsTbrListData(params?:UsTbrQueryParams){
-	return request('/econ/tbr',{
+	return request('/api/econ/tbr',{
 		params
 	});
 }

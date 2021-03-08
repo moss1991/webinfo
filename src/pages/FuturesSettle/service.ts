@@ -4,7 +4,7 @@ import type {
 } from './data.d';
 
 export async function queryFuturesSettleData(params?:FuturesSettleParams){
-  return request('/futures/settle',{
+  return request('/api/futures/settle',{
     params
   })
 }

@@ -4,7 +4,7 @@ import type {
 } from './data';
 
 export async function queryGdpList(params?:GdpQueryParams){
-  return request('/econ/gdp',{
+  return request('/api/econ/gdp',{
     params
   });
 }

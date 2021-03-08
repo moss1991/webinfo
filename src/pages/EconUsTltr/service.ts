@@ -4,7 +4,7 @@ import type {
 } from './data.d';
 
 export async function queryUsTltrListData(params?:UsTltrQueryParams){
-	return request('/econ/tltr',{
+	return request('/api/econ/tltr',{
 		params
 	});
 }
