@@ -50,3 +50,4 @@ npm run lint:fix
 * +调整参数来适应nginx方式额部署，调整机器扩硬盘 20210308 rc done
 * +数据库初始化 20210309 rc done
 * +调整海关数据title 20210309 rc done
+* +version存放各个版本的package 20210309 rc done
