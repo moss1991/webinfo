@@ -15,12 +15,12 @@ const MONTH_TYPE = {
 
 const table_params = {
   columns : [
-    {
-      title: 'id',
-      dataIndex: 'id',
-      key: 'id',
-      width: 150,
-    },
+    // {
+    //   title: 'id',
+    //   dataIndex: 'id',
+    //   key: 'id',
+    //   width: 150,
+    // },
     {
       title: '商品编码',
       dataIndex: 'product_id',
@@ -120,26 +120,26 @@ const table_params = {
       width: 150,
       render:(text:any, record:any) => IMPORT_OR_EXPORT[text]
     },
-    {
-      title: '编码类型',
-      dataIndex: 'code_type',
-      key: 'code_type',
-      width: 150,
-      render:(text:any, record:any) => CORD_TYPE[text]
-    },
-    {
-      title: '当月值/累计值',
-      dataIndex: 'month_type',
-      key: 'month_type',
-      width: 150,
-      render:(text:any, record:any) => MONTH_TYPE[text]
-    },
-    {
-      title: '数据采集时间',
-      dataIndex: 'create_time',
-      key: 'create_time',
-      width: 300,
-    },
+    // {
+    //   title: '编码类型',
+    //   dataIndex: 'code_type',
+    //   key: 'code_type',
+    //   width: 150,
+    //   render:(text:any, record:any) => CORD_TYPE[text]
+    // },
+    // {
+    //   title: '当月值/累计值',
+    //   dataIndex: 'month_type',
+    //   key: 'month_type',
+    //   width: 150,
+    //   render:(text:any, record:any) => MONTH_TYPE[text]
+    // },
+    // {
+    //   title: '数据采集时间',
+    //   dataIndex: 'create_time',
+    //   key: 'create_time',
+    //   width: 300,
+    // },
   ],
   // page_size : 50,
   width : 3000,
