@@ -258,6 +258,13 @@ export default [
               },
 
               {
+                name: 'list.systeminfo',
+                icon: 'table',
+                path: '/systeminfo',
+                component: './SystemInfo',
+              },
+
+              {
                 component: './404',
               },
             ],

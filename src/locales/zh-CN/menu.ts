@@ -77,4 +77,5 @@ export default {
   'menu.list.economy.others.tbr' : '美国短期利率',
   'menu.list.economy.others.tltr' : '美国长期利率',
   'menu.list.haiguan' : '2020海关进出口数据',
+  'menu.list.systeminfo' : '临时:浏览器信息查询',
 };

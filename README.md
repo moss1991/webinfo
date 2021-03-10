@@ -51,3 +51,4 @@ npm run lint:fix
 * +数据库初始化 20210309 rc done
 * +调整海关数据title 20210309 rc done
 * +version存放各个版本的package 20210309 rc done
+* +浏览器测试参数页面 20210310 rc done
