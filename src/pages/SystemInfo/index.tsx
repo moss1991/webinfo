@@ -9,6 +9,14 @@ const SyetemInfo: React.FC = () => {
   const avail_width =  window.screen.availWidth;
   const agent = navigator.userAgent.toLowerCase();
 
+  const requestFullScreen = (element:any) =>{
+    document.documentElement.requestFullscreen()
+  }
+
+  const exitFullScreen = ()=> {
+    document.exitFullscreen()
+  }
+
   return (
     <div>
       <h1>当前网页和浏览器信息</h1>
@@ -19,6 +27,8 @@ const SyetemInfo: React.FC = () => {
       <p>屏幕可用工作区宽度：{ avail_width }</p>
       <p>屏幕可用工作区高度：{ avail_height }</p>
       <p>{ agent }</p>
+      <button onClick={ requestFullScreen }>进入全屏</button>
+      <button onClick={ exitFullScreen }>退出全屏</button>
     </div>
   )
 }
